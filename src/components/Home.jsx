@@ -15,7 +15,7 @@ const Home = () => {
       <div className="grid grid-cols-4 gap-5">
 
       {coffeeData.map((data) => (
-        <CoffeeCard key={data.id} data={data}></CoffeeCard>
+        <CoffeeCard key={data._id} data={data}></CoffeeCard>
       ))}
       </div>
     </div>

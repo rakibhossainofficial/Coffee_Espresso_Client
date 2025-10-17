@@ -1,4 +1,5 @@
-import Swal from 'sweetalert2'
+import { data } from "react-router";
+import Swal from "sweetalert2";
 
 const AddCoffee = () => {
   const handleaddcoffee = (e) => {
@@ -35,17 +36,18 @@ const AddCoffee = () => {
       .then((data) => {
         if (data.insertedId) {
           console.log("Coffee added successfully");
-          
+
           Swal.fire({
             title: "Coffee added successfully",
             icon: "success",
             draggable: true,
           });
-        } 
-        form.reset()
+        }
+        form.reset();
       });
   };
 
+  
   return (
     <div className="max-w-7xl  mx-auto px-10 md:px-6 ">
       <h1 className="text-3xl font-bold md:text-6xl py-5 text-center">
