@@ -1,13 +1,13 @@
 import { Link } from "react-router";
 import Swal from "sweetalert2";
 
-const CoffeeCard = ({ data }) => {
+const CoffeeCard = ({ data, coffeeData, setCoffeeDataa }) => {
   console.log(data);
 
   const { _id, photo, name, price } = data;
 
   const handledelete = () => {
-    console.log(_id);
+    // console.log(_id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -32,6 +32,9 @@ const CoffeeCard = ({ data }) => {
                 icon: "success",
               });
             }
+
+            const remainingCoffee = coffeeData.filter(cof => cof._id !== _id)
+            setCoffeeDataa(remainingCoffee)
           });
       }
     });
@@ -41,7 +44,7 @@ const CoffeeCard = ({ data }) => {
     <div>
       <div className="card bg-base-100 shadow-sm">
         <figure>
-          <img src={photo} alt="Shoes" />
+          <img src={photo} alt="" />
         </figure>
         <div className="card-body">
           <div className="flex justify-between">
@@ -53,7 +56,9 @@ const CoffeeCard = ({ data }) => {
             <Link to={`/coffees/${_id}`}>
               <button className="btn btn-active">View</button>
             </Link>
-            <button className="btn btn-active btn-primary">Edit</button>
+            <Link to={`/updatecoffee/${_id}`}>
+              <button className="btn btn-active btn-primary">Edit</button>
+            </Link>
             <button
               onClick={handledelete}
               className="btn btn-active btn-secondary"

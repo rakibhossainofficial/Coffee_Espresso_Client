@@ -1,21 +1,21 @@
 import { useLoaderData } from "react-router";
 import CoffeeCard from "./CoffeeCard";
+import { useState } from "react";
 
 const Home = () => {
 
-  const coffeeData  = useLoaderData()
+  const initialCoffee  = useLoaderData()
+  const [coffeeData, setCoffeeDataa] = useState(initialCoffee)
   console.log(coffeeData);
-  
-
 
   return (
     <div>
       Home
 
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
 
       {coffeeData.map((data) => (
-        <CoffeeCard key={data._id} data={data}></CoffeeCard>
+        <CoffeeCard coffeeData={coffeeData} setCoffeeDataa={setCoffeeDataa} key={data._id} data={data}></CoffeeCard>
       ))}
       </div>
     </div>
