@@ -1,30 +1,15 @@
 import React from "react";
 import { data, useLoaderData } from "react-router";
+import CupsCard from "./CupsCard";
 
 const NewCups = () => {
   const cupsData = useLoaderData();
-  console.log(cupsData);
+  // console.log(cupsData._id);
 
   return (
-    <div className="grid grid-cols-4 gap-3">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
       {cupsData.map((data) => (
-        <div className="card bg-base-100  shadow-md">
-          <figure>
-            <img
-              src={data.photo}
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">{data.name}</h2>
-            <p className="font-bold">
-             Price : {data.price}
-            </p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
+        <CupsCard data={data}></CupsCard>
       ))}
     </div>
   );

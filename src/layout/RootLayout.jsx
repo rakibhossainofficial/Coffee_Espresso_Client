@@ -1,10 +1,11 @@
 import React from 'react'
 import { Outlet } from 'react-router'
+import Navbar from '../components/Navbar'
 
 const RootLayout = () => {
   return (
     <div>
-      <h1>Header</h1>
+      <Navbar/>
       <div className='max-w-7xl mx-auto '>
       <Outlet></Outlet>
 

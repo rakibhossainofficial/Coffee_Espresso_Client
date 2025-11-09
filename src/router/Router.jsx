@@ -6,6 +6,8 @@ import AddCups from "../components/AddCups";
 import NewCups from "../components/NewCups";
 import CoffeeDetails from "../components/CoffeeDetails";
 import UpdateCoffee from "../components/UpdateCoffee";
+import SignIn from "../components/SignIn";
+import SignUP from "../components/SignUP";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ export const router = createBrowserRouter([
         path: "updatecoffee/:id",
         loader: ({params}) => fetch(`http://localhost:3000/coffees/${params.id}`),
         element: <UpdateCoffee></UpdateCoffee>,
+      },
+      {
+        path: "signin",
+        element: <SignIn></SignIn>,
+      },
+      {
+        path: "signup",
+        element: <SignUP></SignUP>,
       }
     ],
   },

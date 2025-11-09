@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router";
 import CoffeeCard from "./CoffeeCard";
 import { useState } from "react";
+import NewCups from "./NewCups";
 
 const Home = () => {
 
@@ -18,6 +19,8 @@ const Home = () => {
         <CoffeeCard coffeeData={coffeeData} setCoffeeDataa={setCoffeeDataa} key={data._id} data={data}></CoffeeCard>
       ))}
       </div>
+
+   
     </div>
   );
 };
